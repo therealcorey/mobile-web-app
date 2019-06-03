@@ -1,76 +1,50 @@
-<html>
-<head>
-  <title>Login Page</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	
-	<style>
-	
-	 body {
-  margin: 0;
-  padding: 0;
-  background: #ccc;
-  background-image: url(image/);
-  background-repeat: no-repeat;
-  background-size: 100% 1250px;
+<?php
+// INIT
+session_start();
+require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
+
+// HTML
+require PATH_LIB . "page-top.php"; ?>
+
+<script>
+function login() {
+  adm.ajax({
+    // Change this to absolute URL if you are getting file not found errors
+    // E.g. http://mysite.com/ajax-session.php
+    url : "ajax-session.php",
+    data : {
+      req : "in",
+      email : document.getElementById("user_email").value,
+      password : document.getElementById("user_password").value
+    },
+    ok : function(){
+      location.href = "index.php";
+    },
+    error : function(){
+      alert("Invalid user/password");
+    }
+  });
+  return false;
 }
-	
-	</style>
+</script>
+<style>
+#login-form{
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 10px 20px 20px 20px;
+  background: #eee;
+}
+#login-form input{
+  width: 100%;
+}
+</style>
 
-
-  <script language="javascript" type="text/javascript">
-  function fun_val()
-  	{
-  		var l=document.loginsell.username.value;
-  		if(l=="")
-  		{
-  			alert("Please Enter User name");
-  			document.loginsell.username.focus;
-  			return false;
-  		}
-
-  		var p=document.loginsell.password.value;
-  		if(p=="")
-  		{
-  			alert("Please Enter Password");
-  			document.loginsell.password.focus;
-  			return false;
-			
-		
-  		}
-  	}
-  </script>
-
-<body>
-
-<p align="center" id="loginpage"><br><TR></tr>
-<form name="loginform" action="loginsession.php" method="post"><TR></tr>
-  <table font-family = "Georgia" class = "table" width="300" height="178"  align="center" cellpadding="0"cellspacing="0" border="0">
-    <tr>
-      <td height="41" colspan="2" align="center" ><h2><b>Login Form</b></h2></td>
-    </tr>
-    <tr>
-      <td width="170" height="40"  align="center"><font size=5><b>User Name</b></td>
-      <td width="213">
-         <input type="text" id="FullName" name="email"placeholder="Your Email" maxlength="31" required style="background" />
-      </font></td>
-    </tr>
-    <tr>
-      <td height="38" align="center"><font size=5><b>Password</b></td>
-      <td>
-        <input type="password" id="FullName" name="password" placeholder="Your Password" maxlength="10" required />
-        </font></td>
-    </tr>
-    <br />
-    <tr>
-      <td height="48" colspan="2" align="center">
-        <input type="submit"  value="Submit" name="ok" onClick="return fun_val();"/>
-
-        <a href="userinfo.php">
-        <br/><br/><font size=5><b>New User?</b></a></font></td>
-    </tr>
-  </table>
-<p>&nbsp;</p>
+<form id="login-form" onsubmit="return login();">
+  <h1>PLEASE SIGN IN</h1>
+  <label for="user_email">Email:</label>
+  <input type="email" id="user_email" required value="john@doe.com"/>
+  <label for="user_password">Password:</label>
+  <input type="password" id="user_password" required value="123456"/>
+  <input type="submit" value="login"/>
 </form>
-</body>
-</html>
+<?php require PATH_LIB . "page-bottom.php"; ?>
