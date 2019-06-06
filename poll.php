@@ -6,6 +6,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </head>  
 	</head>
 	<body class="is-preload">
 
@@ -56,59 +60,40 @@
 
 							<section id="two">
 								<div class="container">
-							<table class="table">
-								<thead>
-								<tr>
-										<th>Party ID</th>
-										<th>Party Name</th>
-										<th>Existence</th>
-										<th>Party Symbol</th>    
-										<th>Abbreviation</th>
-										<th>Chair Person First Name</th>
-										<th>Chair Person Last Name</th>
-										<th>Chairperson DOB</th>
-										</tr>
-									</thead>
-					
 								
-								<tbody>
-								<?php 
-								$conn = mysqli_connect("localhost", "root", "", "elections_database2");
-								$result = mysqli_query($conn, "SELECT * FROM party");
 								
-								while ($row = mysqli_fetch_assoc($result)):
+								<div class="row">
+    <div class="col-md-6">
+     <form method="post" id="poll_form">
+      <h3>Electoral Results </h3>
+      <br />
+      <div class="radio">
+       <label><h4>APNU/AFC</h3></label>
+      </div>
+      <div class="radio">
+       <label><h4>PPP/C</h3></label>
+      </div>
+      <div class="radio">
+       <label><h4> TUF</h3></label>
+      </div>
+      <div class="radio">
+       <label><h4>URP</h3></label>
+      </div>
+
+      <br />
+     </form>
+     <br />
+    </div>
+    <div class="col-md-6">
+     <br />
+     <br />
+     <br />
+     <h4>Live Poll Result</h4><br />
+     <div id="poll_result"></div>
+    </div>
+   </div>
 								
-								?>
-								<tr>
-									<td><?php echo $row['party_id']; ?></td>
-									<td><?php echo $row['party_name']; ?></td>
-									<td><?php echo $row['existence']; ?></td>
-									<?php echo "<td><img src='data:images/jpg;base64,".base64_encode($row['election_symbol'])."' height='50' width='50'  /></td>"; ?>
-									<td><?php echo $row['abbreviation']; ?></td>
-									<td><?php echo $row['chairperson_first_name']; ?></td>
-									<td><?php echo $row['chairperson_last_name']; ?></td>
-									<td><?php echo $row['chairperson_DOB']; ?></td>
-									</tr>
-	
-									<?php endwhile; ?> 
-								</tbody>
-								</table>
-									
-								<link rel="stylesheet" href="assets/css/bootstrap.css">
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.min.css"/>
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.css"/>
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/jquery.dataTables.css"/>
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/datatables.jqueryui.css"/>
-								
-								<script src="assests/tables/js/jquery.js"> </script>
-								<script src="assests/tables/js/dataTables.foundation.min.js"></script>
-								<script src="assests/tables/js/dataTables.foundation.js"></script>								</script>
-								<script src="assests/tables/js/dataTables.jquery.dataTables.js"> </script>
-								
-								<script>
-									$(".table").DataTable();
-									</script>
-								
+							
 								</div>
 									</section>
 

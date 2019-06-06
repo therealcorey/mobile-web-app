@@ -4,6 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?php  include('updatevotes.php'); ?>
 <html>
 	<head>
 		<title>Election's Result Hub</title>
@@ -12,6 +13,14 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
+	<?php if (isset($_SESSION['message'])): ?>
+	<div class="msg">
+		<?php 
+			echo $_SESSION['message']; 
+			unset($_SESSION['message']);
+		?>
+	</div>
+<?php endif ?>
 
 		<!-- Header -->
 			<section id="header">
@@ -26,7 +35,7 @@
 						<li><a href="#one" class="active">About</a></li>
 						<li><a href="#two">Things I Can Do</a></li>
 						<li><a href="#three">A Few Accomplishments</a></li>
-						<li><a href="#four">Contact</a></li>
+						<li><a href="#four">Insert Statement of Polls</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -68,10 +77,7 @@
 									<ul class="feature-icons">
 										<li class="fa fa-exchange">Submit Statement of Polls Information Near you</li>
 										<li class="fa fa-eye">View Prelinary Results</li>
-										<li class="fa-users ">Electoral Candidate's Profiles</li>
-										<li class="fa-coffee">Drink much coffee</li>
-										<li class="fa-bolt">Lightning bolt</li>
-										<li class="fa-users">Shadow clone technique</li>
+										<li <a href="candidate.php" class="fa-users ">Electoral Candidate's Profiles</a></li>
 									</ul>
 								</div>
 							</section>
@@ -112,26 +118,26 @@
 								<div class="container">
 									<h3>Statement of Polls input</h3>
 									<p>Enter specific information of statement of polls</p>
-									<form method="post" action="#">
+									<form method="post" action="updatevotes.php">
 										<div class="row gtr-uniform">
 										
-											<div class="col-2 "><input type="number" name="district" id="District" placeholder="District" min="1" max="10" required /></div>
+											<div class="col-2 "><input type="number" name="district" id="district" placeholder="District" min="1" max="10" required /></div>
 											
 											<div class="col-6-small"><input type="text" name="polling_station" id="polling_station" placeholder="Polling Station" required /></div>
 											
 											<div class="col-4"><input type="number" name="valid_votes" id="valid_votes" placeholder="Valid Votes" min="0" required/></div>
 											
-											<div class="col-4"><input type="number" name="rejected votes" id="rejected_votes" placeholder="Rejected Votes" min="0" /></div>
+											<div class="col-4"><input type="number" name="rejected_votes" id="rejected_votes" placeholder="Rejected Votes" min="0" /></div>
 											
-											<div class="col-4"><input type="number" name="rejected ballots" id="rejected_ballots" placeholder="Rejected Ballots" min="0" required/></div>
+											<div class="col-4"><input type="number" name="rejected_ballots" id="rejected_ballots" placeholder="Rejected Ballots" min="0" required/></div>
 											
-											<div class="col-6"><input type="number" name="unmarked ballots" id="unmarked_ballots" placeholder="Unmarked Ballots"  required/></div>
+											<div class="col-6"><input type="number" name="unmarked_ballots" id="unmarked_ballots" placeholder="Unmarked Ballots"  required/></div>
 											
 											<div class="col-6"><input type="number" name="ballots" id="ballots" placeholder="Total Ballots" min="0" required/></div>
 											
-											<div class="col-3"><input type="number" name="APNU" id="votes" placeholder="APNU/AFC" required /></div>
+											<div class="col-3"><input type="number" name="APNU" id="APNU" placeholder="APNU/AFC" required /></div>
 											
-											<div class="col-3"><input type="number" name="PPP" id="PPP/C" placeholder="PPP/C" min="0" required/></div>
+											<div class="col-3"><input type="number" name="PPP" id="PPP" placeholder="PPP/C" min="0" required/></div>
 											
 											<div class="col-3"><input type="number" name="URP" id="URP" placeholder="URP" min="0" required/></div>
 											
@@ -139,7 +145,7 @@
 											
 											<div class="col-12">
 												<ul class="actions">
-													<li><input type="submit" class="primary" value="Submit" /></li>
+													<li><input type="submit" name="save" class="primary" value="Submit" /></li>
 													<li><input type="reset" value="Reset Form" /></li>
 												</ul>
 											</div>
