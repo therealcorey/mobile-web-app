@@ -27,7 +27,7 @@
 						
 						<li><a href="index.php">Home</a></li>
 						<li><a href="index.php#three">Insert Statement of Polls</a></li>
-						<li><a href="index5.php">District Results</a></li>
+						<li><a href="index4.php">View Prilimary Results</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -67,7 +67,9 @@
 									<table  class="table table-striped table-bordered">
 											<thead>
 												<tr>
-													<th>APNU/AFC TOTAL</th>
+													<th>District NO.</th>
+													<th>District Name</th>
+													<th>APNU/AFC Total</th>
 													<th>PPP/C Total</th>
 													<th>TUF Total</th>
 													<th>URP Total</th>
@@ -77,7 +79,7 @@
 											<tbody>
 											<?php
 											$conn = mysqli_connect("localhost", "root", "", "elections_database2");
-											$result = mysqli_query($conn, "SELECT * FROM results");
+											$result = mysqli_query($conn, "SELECT * FROM district");
 
 
 											while ($row = mysqli_fetch_assoc($result)):
@@ -85,10 +87,12 @@
 
 											?>
 											<tr>
-												<td><?php echo $row['apnu_total']; ?></td>
-												<td><?php echo $row['ppp_total']; ?></td>
-												<td><?php echo $row['tuf_total']; ?></td>
-												<td><?php echo $row['urp_total']; ?></td>
+												<td><?php echo $row['district']; ?></td>
+												<td><?php echo $row['district_name']; ?></td>
+												<td><?php echo $row['apnu']; ?></td>
+												<td><?php echo $row['ppp']; ?></td>
+												<td><?php echo $row['tuf']; ?></td>
+												<td><?php echo $row['urp']; ?></td>
 
 
 												</tr>
