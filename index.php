@@ -7,6 +7,7 @@
 <?php  include('updatevotes.php'); ?>
 <html>
 	<head>
+
 		<title>Election's Result Hub</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -101,35 +102,35 @@
 				<input type="text" name="polling_station_name" class="form-control" placeholder="Polling Station" required>
 			</div>
 			<div class="form-group" "col-4">
-				
+
 				<input type="number" name="valid_votes" class="form-control" placeholder="Valid Votes" min="0" required>
 			</div>
 			<div class="form-group" "col-4">
-				
+
 				<input type="number" name="rejected_votes" id="fee" class="form-control" placeholder="Rejected Votes"min="0">
 			</div>
 			<div class="form-group" "col-4">
-				
+
 				<input type="number" name="rejected_ballots" class="form-control" placeholder="Rejected Ballots" min="0" >
 			</div>
 			<div class="form-group" "col-6">
-				
+
 				<input type="number" name="unmarked_ballots" class="form-control"  placeholder="Unmarked Ballots" min="0">
 			</div>
 			<div class="form-group" "col-6">
-				
+
 				<input type="number" name="ballots" class="form-control" placeholder="Total Ballots" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
-				
+
 				<input type="number" name="APNU" class="form-control" placeholder="APNU/AFC" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
-				
+
 				<input type="number" name="PPP" class="form-control" placeholder="PPP/C" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
-				
+
 				<input type="number" name="URP" class="form-control" placeholder="URP" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
