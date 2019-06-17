@@ -7,29 +7,19 @@
 <?php  include('updatevotes.php'); ?>
 <html>
 	<head>
-
 		<title>Election's Result Hub</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="bootstrap/js/jquery.min.js"></script>
+
 	</head>
 	<body class="is-preload">
-	<?php if (isset($_SESSION['message'])): ?>
-	<div class="msg">
-		<?php
-			echo $_SESSION['message'];
-			unset($_SESSION['message']);
-		?>
-	</div>
-<?php endif ?>
 
 		<!-- Header -->
 			<section id="header">
 				<header>
 					<span class="image avatar"><img src="images/avatar.png" alt="" /></span>
-					<h1 id="logo"><a href="#">Co-Operative Republic of Guyana</a></h1>
+					<h1 id="logo">Co-Operative Republic of Guyana</h1>
 					<p>Crowdsource Hub <br />
 					for elections results</p>
 				</header>
@@ -39,7 +29,7 @@
 						<li><a href="#two">Things I Can Do</a></li>
 						<li><a href="#three">Insert Statement of Polls</a></li>
 						<li><a href="index4.php">View Prilimary Results</a></li>
-						<li><a href="admin/login.php">Admin Login</a></li>
+		
 					</ul>
 				</nav>
 				<footer>
@@ -62,7 +52,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<img src="images/banner.png" alt="" />
+									<img src="images/banner.png" alt="" height='5' width='5'/>
 								</div>
 								<div class="container">
 									<header class="major">
@@ -79,9 +69,9 @@
 									<h3>Things You Can Do</h3>
 									<p></p>
 									<ul class="feature-icons">
-										<li class="fa fa-exchange">Submit Statement of Polls Information Near you</li>
-										<li class="fa fa-eye">View Prelinary Results</li>
-										<li <a href="candidate.php" class="fa-users ">Electoral Candidate's Profiles</a></li>
+										<li class="fa fa-exchange" ><a href="#three">Submit Statement of Polls Information Near you</a></li>
+										<li class="fa fa-eye"><a href="index4.php">View Prelinary Results</a></li>
+										<li class="fa-users "><a href="candidate.php">Electoral Candidate's Profiles</a></li>
 									</ul>
 								</div>
 							</section>
@@ -102,35 +92,35 @@
 				<input type="text" name="polling_station_name" class="form-control" placeholder="Polling Station" required>
 			</div>
 			<div class="form-group" "col-4">
-
+				
 				<input type="number" name="valid_votes" class="form-control" placeholder="Valid Votes" min="0" required>
 			</div>
 			<div class="form-group" "col-4">
-
+				
 				<input type="number" name="rejected_votes" id="fee" class="form-control" placeholder="Rejected Votes"min="0">
 			</div>
 			<div class="form-group" "col-4">
-
+				
 				<input type="number" name="rejected_ballots" class="form-control" placeholder="Rejected Ballots" min="0" >
 			</div>
 			<div class="form-group" "col-6">
-
+				
 				<input type="number" name="unmarked_ballots" class="form-control"  placeholder="Unmarked Ballots" min="0">
 			</div>
 			<div class="form-group" "col-6">
-
+				
 				<input type="number" name="ballots" class="form-control" placeholder="Total Ballots" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
-
+				
 				<input type="number" name="APNU" class="form-control" placeholder="APNU/AFC" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
-
+				
 				<input type="number" name="PPP" class="form-control" placeholder="PPP/C" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
-
+				
 				<input type="number" name="URP" class="form-control" placeholder="URP" min="0" required>
 			</div>
 			<div class="form-group" "col-3">
@@ -160,6 +150,19 @@
 								<li>&copy; Guyana Elections Hub All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
+						<link rel="stylesheet" href="assets/css/bootstrap.css">
+											<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.min.css"/>
+											<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.css"/>
+											<link rel="stylesheet" type="text/css" href="assets/tables/cs/jquery.dataTables.css"/>
+											<link rel="stylesheet" type="text/css" href="assets/tables/cs/datatables.jqueryui.css"/>
+
+											<script src="assests/tables/js/jquery.js"> </script>
+											<script src="assests/tables/js/dataTables.foundation.min.js"></script>
+											<script src="assests/tables/js/dataTables.foundation.js"></script>								</script>
+											<script src="assests/tables/js/dataTables.jquery.dataTables.js"> </script>
+							<script>
+												$(".table").DataTable();
+												</script>
 					</section>
 
 			</div>

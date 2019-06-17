@@ -25,11 +25,11 @@ if (!$_ADMIN && basename($_SERVER["SCRIPT_FILENAME"], '.php')!="login") {
     <div id="page-wrap">
       <?php if ($_ADMIN) { ?>
       <!-- [SIDE BAR] -->
+	  <
       <nav id="page-sidebar">
         <a href="#">
           <span class="ico">&#9788;</span>
-          SIDE BAR - PUT YOUR MODULES HERE
-        </a>
+          OPTIONS:
         <a href="users.php">
           <span class="ico">&#9787;</span>
           Manage Users

@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/table3.css" />
 	</head>
 	<body class="is-preload">
 
@@ -13,7 +14,7 @@
 			<section id="header">
 				<header>
 					<span class="image avatar"><img src="images/avatar.png" alt="" /></span>
-					<h1 id="logo"><a href="#">Co-Operative Republic of Guyana</a></h1>
+					<h1 id="logo">Co-Operative Republic of Guyana</h1>
 					<p>Crowdsource Hub <br />
 					for elections results</p>
 				</header>
@@ -21,8 +22,9 @@
 					<ul>
 						<li><a href="#one" class="active">About</a></li>
 						<li><a href="#two">Party Profile</a></li>
-					 <!-- <li><a href="#three">A Few Accomplishments</a></li> -->
-						<li><a href="#four">Contact</a></li>
+					 <li><a href="index.php#three">Insert Statement of Polls</a></li>
+						<li><a href="index4.php">View Prilimary Results</a></li>
+							<li><a href="index5.php">District Results</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -56,7 +58,7 @@
 
 							<section id="two">
 								<div class="container">
-							<table class="table">
+							<table>
 								<thead>
 								<tr>
 										<th>Party ID</th>
@@ -94,20 +96,7 @@
 								</tbody>
 								</table>
 									
-								<link rel="stylesheet" href="assets/css/bootstrap.css">
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.min.css"/>
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.css"/>
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/jquery.dataTables.css"/>
-								<link rel="stylesheet" type="text/css" href="assets/tables/cs/datatables.jqueryui.css"/>
 								
-								<script src="assests/tables/js/jquery.js"> </script>
-								<script src="assests/tables/js/dataTables.foundation.min.js"></script>
-								<script src="assests/tables/js/dataTables.foundation.js"></script>								</script>
-								<script src="assests/tables/js/dataTables.jquery.dataTables.js"> </script>
-								
-								<script>
-									$(".table").DataTable();
-									</script>
 								
 								</div>
 									</section>

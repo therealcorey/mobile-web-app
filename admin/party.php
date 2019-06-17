@@ -1,7 +1,7 @@
 <?php
 // INIT
 session_start();
-require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
+require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config1.php";
 
 // HTML
 require PATH_LIB . "page-top.php"; ?>

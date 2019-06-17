@@ -10,6 +10,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+				
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
 	</head>
 	<body class="is-preload">
 
@@ -17,7 +21,7 @@
 			<section id="header">
 				<header>
 					<span class="image avatar"><img src="images/avatar.png" alt="" /></span>
-					<h1 id="logo"><a href="#">Co-Operative Republic of Guyana</a></h1>
+					<h1 id="logo">Co-Operative Republic of Guyana</h1>
 					<p>Crowdsource Hub <br />
 					for elections results</p>
 				</header>
@@ -28,6 +32,7 @@
 						<li><a href="index.php">Home</a></li>
 						<li><a href="index.php#three">Insert Statement of Polls</a></li>
 						<li><a href="index5.php">District Results</a></li>
+						<li><a href="candidate.php">Party Profile</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -64,6 +69,7 @@
 						<!-- Two -->
 							<section id="two">
 								<div class="container">
+								<div class="table-responsive">
 									<table  class="table table-striped table-bordered">
 											<thead>
 												<tr>
@@ -82,48 +88,37 @@
 
 											while ($row = mysqli_fetch_assoc($result)):
 
-
 											?>
 											<tr>
 												<td><?php echo $row['apnu_total']; ?></td>
 												<td><?php echo $row['ppp_total']; ?></td>
 												<td><?php echo $row['tuf_total']; ?></td>
 												<td><?php echo $row['urp_total']; ?></td>
-
-
 												</tr>
-												
-
-
-
-
-
 
 											<?php endwhile;?>
 											</tbody>
 											</table>
+											</div>
 
-											<link rel="stylesheet" href="assets/css/bootstrap.css">
-											<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.min.css"/>
-											<link rel="stylesheet" type="text/css" href="assets/tables/cs/dataTables.foundation.css"/>
-											<link rel="stylesheet" type="text/css" href="assets/tables/cs/jquery.dataTables.css"/>
-											<link rel="stylesheet" type="text/css" href="assets/tables/cs/datatables.jqueryui.css"/>
-
-											<script src="assests/tables/js/jquery.js"> </script>
-											<script src="assests/tables/js/dataTables.foundation.min.js"></script>
-											<script src="assests/tables/js/dataTables.foundation.js"></script>								</script>
-											<script src="assests/tables/js/dataTables.jquery.dataTables.js"> </script>
-
-											<script>
-												$(".table").DataTable();
-												</script>
 								</div>
 							</section>
 
 						<!-- Three -->
 							<section id="three">
+							<div class="wrapper">
 							<div class="container">
+							
+							<script type="text/javascript" src="assets/js/jquery-1.12.3.min.js"></script> 
+						<div id="chart-container">
+							<canvas id="mycanvas"></canvas>
+						</div>
+		
+							<!-- javascript-->
+							<script type="text/javascript" src="assets/js/app.js"></script>
+							<script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 
+								</div>
 								</div>
 							</section>
 
@@ -148,7 +143,14 @@
 					</section>
 
 			</div>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+					 <script>window.jQuery || document.write('<script src="assets/js/jquery-slim.min.js"><\/script>')</script>
+					<script src="assets/js/popper.min.js"></script>
+					<script src="bootstrap/js/bootstrap.min.js"></script>
+					<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+					<script>
+						  feather.replace()
+						</script>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -157,6 +159,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

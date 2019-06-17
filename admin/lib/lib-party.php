@@ -67,14 +67,14 @@ class Party {
   
   
 
-  function add ($party_name, $ideology, $existence, $election_symbol, $abbreviation, $chairperson_first_name, $chairperson_last_name, $chairperson_DOB) {
+  function add ($party_name, $ideology, $existence, $abbreviation, $chairperson_first_name, $chairperson_last_name, $chairperson_DOB) {
   // add() : add a new user
   // PARAM $email - email
   //       $name - name
   //       $password - password (clear text)
 
-    $sql = "INSERT INTO `party` (`party_name`, `ideology`,`existence`, `election_symbol`, `abbreviation`, `chairperson_first_name`, `chairperson_last_name`, `chairperson_DOB`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $cond = [$party_name, $ideology, $existence, $election_symbol, $abbreviation, $chairperson_first_name, $chairperson_last_name, $chairperson_DOB)];
+    $sql = "INSERT INTO `party` (`party_name`, `ideology`,  `abbreviation`, `chairperson_first_name`, `chairperson_last_name`) VALUES ( ?, ?, ?, ?, ?, ?)";
+    $cond = [$party_name, $ideology, $abbreviation, $chairperson_first_name, $chairperson_last_name];
     try {
       $this->stmt = $this->pdo->prepare($sql);
       $this->stmt->execute($cond);
@@ -84,15 +84,16 @@ class Party {
     return true;
   }
 
-  function edit ($party_name, $ideology, $existence, $election_symbol, $abbreviation, $chairperson_first_name, $chairperson_last_name, $chairperson_DOB, $party_id) {
+  function edit ($party_name, $ideology,  $abbreviation, $chairperson_first_name, $chairperson_last_name, $id{
+   
   // edit() : update user
   // PARAM $email - email
   //       $name - name
   //       $password - password (clear text)
   //       $id - user ID
 
-    $sql = "UPDATE `party` SET `party_name`=?, `ideology`=?,`existence`=?,`election_symbol=?`, `chairperson_first_name`=?, `chairperson_last_name`=?,`chairperson_DOB`=?, `abbreviation`=? WHERE `party_id`=?";
-    $cond = [$party_name, $ideology, $existence, $election_symbol, $abbreviation, $chairperson_first_name, $chairperson_last_name, $chairperson_DOB, $party_id];
+    $sql = "UPDATE `party` SET `party_name`=?, `ideology`=?, `chairperson_first_name`=?, `chairperson_last_name`=?, `abbreviation`=? WHERE `party_id`=?";
+    $cond = [$party_name, $ideology, $abbreviation, $chairperson_first_name, $chairperson_last_name,  $id];
     try {
       $this->stmt = $this->pdo->prepare($sql);
       $this->stmt->execute($cond);

@@ -28,7 +28,7 @@ var par = {
   save : function () {
   // save() : save user
 
-    var id = document.getElementById("party_id").value;
+    var id = document.getElementById("par_id").value;
     adm.ajax({
       url : "ajax-party.php",
       data : {
@@ -36,12 +36,9 @@ var par = {
         id : id,
         party_name : document.getElementById("par_name").value,
         ideology : document.getElementById("par_ideology").value,
-		existence : document.getElementById("par_existence").value,
-		election_symbol : document.getElementById("par_election_symbol").value,
 		abbreviation : document.getElementById("par_abbreviation").value,
         chairperson_first_name : document.getElementById("par_chairperson_first_name").value,
 		chairperson_last_name : document.getElementById("par_chairperson_last_name").value,
-		chairperson_DOB : document.getElementById("par_chairperson_DOB").value,
         
       },
       ok : par.list

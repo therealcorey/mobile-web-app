@@ -7,7 +7,6 @@ include("lib/page-top1.php");
 
 
 session_start();
-
 $result=mysqli_query($con,"SELECT party_id,party_name, existence, election_symbol, abbreviation, chairperson_first_name, chairperson_last_name, chairperson_DOB FROM party");
 $row=mysqli_num_rows($result);
 
@@ -53,11 +52,16 @@ while($retrieve=mysqli_fetch_array($result))
 	echo "<th> <a href='update-party.php?party=$pid'><button class='btn btn-success'> Update</button></a></th>";
 	
 }
+
 include("lib/page-bottom.php");
 ?>
+<html>
 <head>
+
 <h2>MANAGE CANDIDATES</h2>
 <a href="newCan.php" ><button>Add Candidate</button></a>
 </head>
+
+
 
 <!-- <script src="public/users.js"></script> -->
